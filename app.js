@@ -16,6 +16,10 @@ const bodyOptions = {
     demand: true,
     alias: 'b'
 };
+
+// Use yargs.command('cmd', 'description', options) to config the command, 
+// Run "node app.js --help" or "node app.js add --help" to display command description
+// const argv = yargs.argv;
 const argv = yargs
     .command('add', 'Add a new note', {
         title: titleOptions,
@@ -28,7 +32,6 @@ const argv = yargs
     .command('remove', 'Remove a note', {
         title: titleOptions
     })
-    .help()
     .argv;
 
 var command = argv._[0];
